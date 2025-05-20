@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KathITMatics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-screen" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; background:#f8f8f8;">
+        <h2>KathITMatics Login</h2>
+      <!--pokusaj pravljenja autha, nije radilo ://-->
+        <input id="auth-username" type="text" placeholder="Username" style="padding:10px; margin:5px;">
+        <input id="auth-password" type="password" placeholder="Password" style="padding:10px; margin:5px;">
+        
+        <div style="margin: 10px;">
+          <button onclick="login()">Login</button>
+          <button onclick="register()">Register</button>
+        </div>
+        <p id="auth-msg" style="color:red; font-weight:bold;"></p>
+      </div>
+      
+      <div id="home-screen" style="display:none;">
+    <h1>KathITMatics</h1>
+
+    <div id="nav-bar">
+      <nav>
+        <button onclick="goTo('home')"><b>HOME</b></button>
+        <button onclick="goTo('exercises')"><b>EXERCISES AND TESTS</b></button>
+        <button onclick="goTo('pet')"><b>MY PET</b></button>
+      </nav>
+
+      <div id="right-bar">
+        <div id="clock">--:--:--</div>
+        <div id="search-bar">
+          <input type="text" id="search-input" placeholder="Search..." />
+          <button id="search-button">Go</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="home" class="home-layout">
+      <div class="home-left">
+        <div class="home-box">
+          <h2 class="centered-text">How to play?</h2>
+          <p class="justified-text">
+            Create a new account, name your pet and take care of him – it's that simple! In order to gather coins which can be used to take care of your Kat, you have to face courses and challenges related to mathematics and IT. But don't worry, you're not alone (most of the time)! Kat is there to guide you through new challenges you hadn't seen before coming at a cost of energy.
+          </p>
+          <p class="centered-text"><b>Prove your Kat is the best Kat in I-4IB!</b></p>
+        </div>
+
+        <div class="home-box">
+          <h2 class="centered-text">Leaderboard</h2>
+          <p class="justified-text">
+            <ol>
+            <li>Example User</li>
+            <li>Example User 2</li>
+            <li>Example User 3</li>
+            <li>Example User 4</li>
+            <li>Example User 5</li>
+            </ol>
+          </p>
+        </div>
+      </div>
+
+      <div class="home-right">
+        <div class="home-box centered-text" style="height: 370px; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+            <a href="doublecoinevent.html">
+              <img src="katchallenge.png" alt="Double Coin Event" style="max-height: 90%; max-width: 100%; object-fit: contain;">
+            </a>
+          </div>
+      </div>
+    </div>
+
+    <div id="exercises" style="display:none;">
+      <h2>Math and IT exercises</h2>
+
+      <div id="exercise-tabs">
+        <button class="exercise-tab-button" onclick="showExerciseTab('lessons')">Lessons</button>
+        <button class="exercise-tab-button" onclick="showExerciseTab('quizzes')">Quizzes</button>
+      </div>
+
+      <div id="lessons-tab">
+        <div id="exercise-categories">
+          <button onclick="showTopic('numbers')">Number systems</button>
+          <button onclick="showTopic('logic')">Logic algebra</button>
+          <button onclick="showTopic('graphics')">Graphical programming</button>
+        </div>
+
+        <div id="numbers" class="exercise-topic" style="display:none;">
+          <div class="exercise-box">
+            <h3>Number systems</h3>
+            <p>
+              Number systems are ways to represent and express numbers using a consistent set of symbols and rules. Different number systems are used in different contexts – especially in computing and mathematics. Even though there are lots of variations in number systems and a lot of number systems in general – only the most important and the most widely used will be mentioned in this course.
+            </p>
+          </div>
+
+          <div class="system-list-box">
+            <h3>The main types:</h3>
+            <h3>Decimal system</h3>
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/nxjA7eNOg2Q" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>Binary system</h3>
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/QERvLoG2TaU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>Octal system</h3>
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/4YwZjymz2gY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3>Hexadecimal system</h3>
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Bt-Be4-1h6Q" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div id="logic" class="exercise-topic" style="display:none;">
+          <div class="exercise-box">
+            <h3>Boolean logic</h3>
+            <p>
+              Boolean logic is the foundation of digital electronics and computer science. It deals with values that are either true or false, and uses logical operators like AND, OR, NOT, and XOR to form logical statements and expressions.
+            </p>
+          </div>
+          <div class="system-list-box">
+            <h3>Boolean logic - general overview and truth tables</h3>
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/33zsvaHb6T8" frameborder="0" allowfullscreen></iframe>
+            </div>
+          
+            <h3>Boolean logic laws</h3>
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/R5wFmvci6pg" frameborder="0" allowfullscreen></iframe>
+
+            </div>
+          </div>
+        </div>
+
+        <div id="graphics" class="exercise-topic" style="display:none;">
+            <div class="exercise-box">
+              <h3>Graphical programming</h3>
+              <p>
+                Graphical or block-based programming simplifies code by letting you snap together visual blocks. It’s used in education to help students grasp logic, sequences, and computational thinking without needing to write text-based code.
+              </p>
+            </div>
+          
+            <div class="system-list-box">
+              <h3>What is Scratch?</h3>
+              <div class="video-container">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/UlQvmhUDSRg" frameborder="0" allowfullscreen></iframe>
+
+              </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="quizzes-tab" style="display:none;">
+        <div class="quiz-selector">
+            <button class="exercise-tab-button" onclick="startQuizTab()">Take number system quiz</button>
+            <button class="exercise-tab-button" onclick="startLogicQuizTab()">Take logic quiz</button>
+            <button class="exercise-tab-button" onclick="startScratchQuizTab()">Take scratch quiz</button>
+        </div>
+
+        <div id="quiz-section" class="exercise-topic" style="display:none;">
+            <h3>Number system quiz</h3>
+            <div id="quiz-question-box"></div>
+            <div id="quiz-timer" style="font-weight: bold; margin-top: 10px;"></div>
+            <button id="next-button" onclick="nextQuestion()">Next</button>
+            <div id="quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+            <div class="quiz-retry-container">
+            <div id="quiz-retry-timer" style="display:none; font-weight: bold; margin-top: 10px;"></div>
+            <button id="replay-button" onclick="startQuiz()" style="display:none;">Replay Quiz</button>
+        </div>
+        </div>
+        <div id="logic-quiz-section" class="exercise-topic" style="display:none;">
+            <h3>Logic quiz</h3>
+            <div id="logic-quiz-question-box"></div>
+            <div id="logic-quiz-timer" style="font-weight: bold; margin-top: 10px;"></div>
+            <button id="logic-next-button" onclick="nextLogicQuestion()">Next</button>
+            <div id="logic-quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+            <div class="quiz-retry-container">
+            <div id="logic-quiz-retry-timer" style="display:none; font-weight: bold; margin-top: 10px;"></div>
+            <button id="logic-replay-button" onclick="startLogicQuiz()" style="display:none;">Replay Quiz</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="scratch-quiz-section" class="exercise-topic" style="display:none;">
+    <h3>Scratch quiz</h3>
+    <div id="scratch-quiz-question-box"></div>
+    <div id="scratch-quiz-timer" style="font-weight: bold; margin-top: 10px;"></div>
+    <button id="scratch-next-button" onclick="nextScratchQuestion()">Next</button>
+    <div id="scratch-quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
+    <div class="quiz-retry-container">
+      <div id="scratch-quiz-retry-timer" style="display:none; font-weight: bold; margin-top: 10px;"></div>
+      <button id="scratch-replay-button" onclick="startScratchQuiz()" style="display:none;">Replay quiz</button>
+    </div>
+  </div>
+
+    <div id="pet" style="display:none;">
+        <div id="coin-display" class="coin-box">💰 Coins: <span id="coin-count">0</span></div>
+        <img id="pou" src="happykat.png" alt="HappyKat">
+      
+        <div id="stats">
+          <p>Hunger: <span id="hunger">100</span></p>
+          <p>Fun: <span id="fun">100</span></p>
+          <p>Cleanliness: <span id="cleanliness">100</span></p>
+        </div>
+      
+        <div id="buttons">
+          <button onclick="feed()">Feed</button>
+          <button onclick="play()">Play</button>
+          <button onclick="clean()">Clean</button>
+        </div>
+      
+        <div id="game-over" style="display:none;">
+          <p>Game over!</p>
+          <button onclick="resetGame()">Play again</button>
+        </div>
+      </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
